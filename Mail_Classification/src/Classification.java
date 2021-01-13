@@ -169,8 +169,8 @@ public class Classification {
 	}
 	
 	public static void main(String[] args) {
-		String nonspam_data="D:\\data\\non-spam.txt";
-		String spam_data="D:\\data\\spam.txt";
+		String nonspam_data="src/non-spam.txt";
+		String spam_data="src/spam.txt";
 		ArrayList<String> nonspam_bag = new ArrayList<String>(readData(nonspam_data));
 		ArrayList<String> spam_bag = new ArrayList<String>(readData(spam_data));
 		HashSet<String> allword_set = new HashSet<>(getBagWords(nonspam_bag, spam_bag));
@@ -187,7 +187,7 @@ public class Classification {
 		double spam_pro = Math.log(calculate(spam_bag.size(), (nonspam_bag.size()+spam_bag.size())));
 		
 		//load test data
-		String fulltest_data="D:\\data\\fulltest.txt";
+		String fulltest_data="src/fulltest.txt";
 		ArrayList<String> raw  = new ArrayList<>(readData(fulltest_data));
 		ArrayList<String> label = new ArrayList<>(getLabelTest(raw));
 		ArrayList<String> data = new ArrayList<>(getDataTest(raw));
